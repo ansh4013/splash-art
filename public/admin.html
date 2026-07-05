@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal - Splash Art</title>
+  <link rel="stylesheet" href="/css/admin-style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h1>🎨 Splash Art - Admin</h1>
+      </div>
+      <div class="nav-right">
+        <span id="adminName" class="admin-name"></span>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <section id="loginSection" class="login-section">
+    <div class="login-container">
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p id="loginError" class="error-message"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Dashboard Section (Hidden until login) -->
+  <section id="dashboardSection" class="dashboard" style="display: none;">
+    <div class="container">
+      <!-- Upload Form -->
+      <div class="admin-panel">
+        <h2>Upload New Artwork</h2>
+        <form id="uploadForm" class="upload-form">
+          <input type="text" id="title" placeholder="Artwork Title" required>
+          <input type="text" id="artist" placeholder="Artist Name" required>
+          <textarea id="description" placeholder="Description" rows="4" required></textarea>
+          <input type="file" id="image" accept="image/*" required>
+          <button type="submit" class="btn btn-primary">Upload Artwork</button>
+          <p id="uploadMessage" class="message"></p>
+        </form>
+      </div>
+
+      <!-- Artworks List -->
+      <div class="admin-panel">
+        <h2>Manage Artworks</h2>
+        <div id="artworksList" class="artworks-list">
+          <!-- Artworks loaded here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>
